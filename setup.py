@@ -10,6 +10,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', ['launch/slam_toolbox_sim.py']),
+        ('share/' + package_name + '/config', ['config/slam_config.yaml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -22,6 +24,7 @@ setup(
         'console_scripts': [
             'obstacle_avoidance = ohm_nav_tutorial.obstacle_avoidance:main', 
             'wall_follower = ohm_nav_tutorial.wall_follower:main',
+            'fuzzy_avoidance = ohm_nav_tutorial.fuzzy_avoidance:main',
         ],
     },
 )
