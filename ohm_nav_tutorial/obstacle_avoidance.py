@@ -12,9 +12,9 @@ class OhmObstacleAvoiderSimple(Node):
     def __init__(self):
         super().__init__('obstacle_avoidance_simple')
 
-        self.__publisher = self.create_publisher(Twist, 'cmd_vel', 1)
+        self.__publisher = self.create_publisher(Twist, '/robot1/cmd_vel', 1)
 
-        self.create_subscription(LaserScan, 'scan', self.__scan_callback, 1)
+        self.create_subscription(LaserScan, '/robot1/laser', self.__scan_callback, 1)
 
 
 
